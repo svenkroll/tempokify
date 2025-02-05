@@ -8,12 +8,12 @@ from datetime import datetime, timedelta
 
 from dotenv import load_dotenv
 from services.clockify_api import ClockifyApi
-from services.tempo_api import TempoApiV3
+from services.tempo_api import TempoApiV4
 
 
 def load_configuration():
     required_keys = ["API_KEY", "WORKSPACE_ID", "USER_ID", "CLIENT_ID_TO_SYNC", "TEMPO_TOKEN",
-                     "TEMPO_WORKER_ID", "TEMPO_TAG_ID_SYNCHRONIZED"]
+                     "TEMPO_WORKER_ID", "TEMPO_TAG_ID_SYNCHRONIZED", "JIRA_BASE_URL", "JIRA_TOKEN", "JIRA_EMAIL"]
 
     config = {}
     for key in required_keys:
@@ -46,7 +46,7 @@ def main(config, days: int):
     start_date = end_date - timedelta(days=days)
 
     clockify = ClockifyApi(config)
-    tempo = TempoApiV3(config)
+    tempo = TempoApiV4(config)
 
     print(f"Synchronizing time entries for clientId: {config['CLIENT_ID_TO_SYNC']}")
 

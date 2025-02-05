@@ -79,9 +79,12 @@ cp .env.dist .env
 - `WORKSPACE_ID=`: The Clockify workspace we source entries from (https://docs.clockify.me/#tag/Workspace)
 - `USER_ID=`: Your Clockify user id, we only sync your time entries.
 - `CLIENT_ID_TO_SYNC=`: We only synchronize Clockify entries for a single Clockify client (https://app.clockify.me/clients)
-- `TEMPO_TOKEN=`: See https://apidocs.tempo.io/v3/ for auth, create a user token and add it here
+- `TEMPO_TOKEN=`: See https://apidocs.tempo.io/ for auth, create a user token and add it here
 - `TEMPO_TAG_ID_SYNCHRONIZED=`: The id of the tag in clockify, that is set when we synchronized the entry to tempo. This tag ensure's we do not duplicate worklogs.
 - `TEMPO_WORKER_ID=`: The id of your account inside Tempo to relate the worklogs to you. I used the network console of my browser while adding worklogs manually in Tempo to get the id. 
+- `JIRA_BASE_URL=`:  The base URL you reach your Jira tickets by browser
+-  `JIRA_EMAIL=`:  Your Jira email address
+- `JIRA_TOKEN=`:  An API token created by you through "https://id.atlassian.com/manage-profile/security/api-tokens"
 
 ## Running the Script
 
